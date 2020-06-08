@@ -9,37 +9,21 @@ $categorias = array('infantil', 'adolescente', 'adulto');
     {
         if($idade >= 6 && $idade <= 12)
         {
-            for($i = 0; $i < count($categorias); $i++)
-            {
-                if($categorias[$i] == 'infantil')
-                {
-                    setarMensagemValida ('O nadador '.$nome. ' compete na categoria ' .$categorias[$i]);
-                    return null;
-                }
-               
-            }
+            $i = 0;
+            setarMensagemValida ($nome, $categorias[$i]);
+            return null;
         }
         else if($idade >=13 && $idade <=  18)
         {
-            for($i = 0; $i < count($categorias); $i++)
-            {
-                if($categorias[$i] == 'adolescente')
-                {
-                    setarMensagemValida ('O nadador '.$nome. ' compete na categoria ' .$categorias[$i]);
-                    return null;
-                }
-            }
+            $i = 1;
+            setarMensagemValida ($nome, $categorias[$i]);
+            return null;
         }
         else
         {
-            for($i = 0; $i < count($categorias); $i++)
-            {
-                if($categorias[$i] == 'adulto')
-                {
-                    setarMensagemValida ('O nadador '.$nome. ' compete na categoria ' .$categorias[$i]);
-                    return null;
-                }
-            }
+            $i = 2;
+            setarMensagemValida ($nome, $categorias[$i]);
+            return null;
         }
     }
     else

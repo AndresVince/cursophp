@@ -20,11 +20,11 @@ function obterMensagemErro () : ?string
         }
 }
 
-function setarMensagemValida (string $mensagem) : void
-{
+function setarMensagemValida (string $nome, string $catega) : void
+{       
+        $mensagem = 'O nadador '.$nome. ' compete na categoria ' .$catega;
         unset($_SESSION['mensagem-de-erro']);
         $_SESSION['mensagem-valida'] = $mensagem;
-
 }
 
 function obterMensagemValida () : ?string
