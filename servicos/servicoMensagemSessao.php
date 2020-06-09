@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$_SESSION['mensagem-valida'] = 'Insira os dados do competidor';
+// $_SESSION['mensagem-valida'] = 'Insira os dados do competidor';
 function setarMensagemErro (string $mensagem) : void
 {
         unset($_SESSION['mensagem-valida']);

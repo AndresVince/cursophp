@@ -1,7 +1,5 @@
 <?php
 
-
-
 function defineCategoria (string $nome, string $idade) : ?string
 {
 $categorias = array('infantil', 'adolescente', 'adulto', 'idoso');
