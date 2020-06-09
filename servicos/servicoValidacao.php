@@ -1,22 +1,24 @@
 <?php
+
 function validaNome (string $nome) : bool
-{
+{    
+    $message=array("O nome não pode ser vazio, por favor preencha corretamente", "O nome é muito extenso", "O nome deve conter mais que 3 caracteres");
     if(empty($nome)) 
     {
-        setarMensagemErro ('O nome não pode ser vazio, por favor preencha corretamente');
+        setarMensagemErro ($message[0]);
         removerMensagemValida();
         return false;
         //header('Location: index.php'); 	
     }
     else if (strlen($nome) > 40) 
     {
-        setarMensagemErro ('O nome é muito extenso');
+        setarMensagemErro ($message[1]);
         removerMensagemValida();
         return false;
     }
     else if(strlen($nome) <= 3)
     { 
-        setarMensagemErro ('O nome deve conter mais que 3 caracteres');
+        setarMensagemErro ($message[2]);
         removerMensagemValida();
         return false;
     }
@@ -26,21 +28,22 @@ function validaNome (string $nome) : bool
 
 function validaIdade (string $idade) : bool
 {
+    $messag=array("A idade não pode ser vazia, por favor preencha corretamente", "A entrada ".$idade." contém caracteres. Por favor, insira uma idade válida", $idade. " não é uma idade válida. Por favor, insira a idade correta","ultimo");
     if(empty($idade))
     {
-        setarMensagemErro ('A idade não pode ser vazia, por favor preencha corretamente');
+        setarMensagemErro ($messag[0]);
         removerMensagemValida();
         return false;
     }
     else if(!is_numeric($idade))
     {
-        setarMensagemErro ('A entrada '.$idade.' contém caracteres. Por favor, insira uma idade válida');
+        setarMensagemErro ($messag[1]);
         removerMensagemValida();
         return false;
     }
     else if($idade > 110 OR $idade < 6)
     {		
-        setarMensagemErro ($idade. ' não é uma idade válida. Por favor, insira a idade correta');
+        setarMensagemErro ($messag[2]);
         removerMensagemValida();
         return false;
     }

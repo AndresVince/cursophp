@@ -4,7 +4,7 @@
 
 function defineCategoria (string $nome, string $idade) : ?string
 {
-$categorias = array('infantil', 'adolescente', 'adulto');
+$categorias = array('infantil', 'adolescente', 'adulto', 'idoso');
     if (validaNome($nome) && validaIdade($idade))
     {
         if($idade >= 6 && $idade <= 12)
@@ -19,9 +19,15 @@ $categorias = array('infantil', 'adolescente', 'adulto');
             setarMensagemValida ($nome, $categorias[$i]);
             return null;
         }
-        else
+        else if($idade >=19 && $idade <= 60)
         {
             $i = 2;
+            setarMensagemValida ($nome, $categorias[$i]);
+            return null;
+        }
+        else
+        {
+            $i = 3;
             setarMensagemValida ($nome, $categorias[$i]);
             return null;
         }
