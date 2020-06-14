@@ -6,6 +6,6 @@ $sql = 'select * from produtos';
 
 echo '<h3>Produtos: </h3>';
 
-for each ($pdo->query($sql) as $key=>value) {
-        echo 'Id: ' . $value['id'] . '<br> Descrição: ' . $value['descrição'] . '<hr>';
+foreach ($pdo->query($sql) as $key=>$value) {
+        echo 'Id: ' . $value['id'] . '<br> Descrição: ' . $value['descricao'] . '<hr>';
 }
